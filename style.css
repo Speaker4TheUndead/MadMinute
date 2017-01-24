@@ -1,0 +1,31 @@
+/*
+li {
+    display: list-item;
+    float: left;
+    padding: 2%;
+}
+ol{
+    list-style-type: decimal;
+    margin-left: 10%;
+    margin-right: 10%;
+    padding: 10px;
+    overflow: hidden;
+}*/
+th, td {
+    padding:16px;
+   /* padding-bottom: 10%;*/
+}
+
+table {
+    margin: auto;
+}
+
+header {
+    margin: auto;
+    font-size: 2.5em;
+    text-align: center;
+}
+
+#timer {
+    text-align: center;
+}
