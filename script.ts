@@ -1,15 +1,16 @@
 $(document).ready(function(){
-    var problems = ["%qlog(%kx)", "%qsin(%kx)", 
-    "%qcos(%kx)", "%qtan(%kx)", "%qe<sup>%kx</sup>",
-    "%qsinh(%kx)", "%qcosh(%kx)", "%qtanh(%kx)",
-    "%qsec(%kx)", "%qcsc(%kx)", "%qcot(%kx)",
-    "%qsech(%kx)", "%qcsch(%kx)", "%qcoth(%kx)",
-    "%qx<sup>%v</sup>", "%qln(%kx)",
-    "%qarcsin(%kx)", "%qarccos(%kx)", "%qarctan(%kx)",
-    "%qarcsec(%kx)", "%qarccsc(%kx)", "%qarccot(%kx)", 
+    var problems = ["log<sub>%v</sub>(%kx)", "sin(%kx)", 
+    "cos(%kx)", "tan(%kx)", "e<sup>%kx</sup>",
+    "sinh(%kx)", "cosh(%kx)", "tanh(%kx)",
+    "sec(%kx)", "csc(%kx)", "cot(%kx)",
+    "sech(%kx)", "csch(%kx)", "coth(%kx)",
+    "x<sup>%v</sup>", "ln(%kx)",
+    "arcsin(%kx)", "arccos(%kx)", "arctan(%kx)",
+    "arcsec(%kx)", "arccsc(%kx)", "arccot(%kx)",
+    "<sup>1</sup>&frasl;<sub>x<sup>%v</sup></sub>" 
     ]
     /*
-    %q and %k are optional Coefficients whilst
+     and %k are optional Coefficients whilst
     %v is a mandatory coefficient
     */
     var count = 180;
@@ -41,23 +42,17 @@ $(document).ready(function(){
     function replaceCoEffs(problem: String): String{
         var rando = Math.floor(Math.random() * 111)
         if(25 < rando && rando <= 50){
-            var q = Math.floor(Math.random() * 21).toString();
             var k = Math.floor(Math.random() * 21).toString();
         }else if(rando <= 25){
-            var q = Math.floor(Math.random() * 21).toString();
-            var k = ""
+            var k = Math.floor(Math.random() * 41).toString();
         }else if(rando > 75 && rando <= 100){
-            var q = ""
-            var k = Math.floor(Math.random() * 21).toString();
+            var k = Math.floor(Math.random() * 61).toString();
         }else if(rando > 100){
-            var q = "1/"
-            var k = ""
+            var k = Math.floor(Math.random() * 81).toString();
         }else{
-            var q = ""
             var k = ""
         }
         var v = (Math.floor(Math.random() * 11) + 1).toString()
-        problem = problem.replace("%q", q);
         problem = problem.replace("%k", k);
         problem = problem.replace("%v", v);
         return problem
